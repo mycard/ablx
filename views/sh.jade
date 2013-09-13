@@ -1,0 +1,29 @@
+html
+    meta(charset='utf-8')
+    head
+    script
+        window.onload=function sub(){
+          var x=document.getElementsByTagName('p');
+          for(var i=x.length-1;i>=0;i--){
+              x[i].innerHTML=x[i].innerHTML.replace(/\n/g,"<br>");
+          }
+        }
+    body
+        // var items = #{items}
+        - each item in items
+            - each val, key in item
+                case key
+                    when 'win'
+                        th 【胜】#{val}
+                    when 'lose'
+                        th &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  VS     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   #{val}【负】     &nbsp&nbsp&nbsp
+                    when 'time'
+                        th  日期 :#{val}
+                        br
+                    when 'txt'
+                        p  #{val}
+                        br
+                    when '_id'
+                        br
+                    default
+                        th #{key} : #{val}

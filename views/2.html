@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <script>
+        function sub(th) {
+            document.getElementById("but").disabled = true;
+            if (document.getElementById("message").value.length < 30) {
+                alert("请肯定内容输入没有错误！");
+                document.getElementById("but").disabled = false;
+            }
+            else if (document.getElementById("win").value.length < 2) {
+                alert("请肯定胜方输入没有错误！");
+                document.getElementById("but").disabled = false;
+            }
+            else if (document.getElementById("lose").value.length < 2) {
+                alert("请肯定负方输入没有错误！");
+                document.getElementById("but").disabled = false;
+            }
+            else {
+                th.submit();
+            }
+        }
+        window.onload = function dat() {
+            document.getElementById("date").value = new Date().toJSON().slice(0, 10)
+        };
+    </script>
+</head>
+<body>
+<form action="send">
+    【胜】<input id="win" type="text" name="win"/> VS
+    <input id="lose" type="text" name="lose"/>【负】<p/>
+    输入日期<input id="date" type="date" name="time" value="">注意格式，例子:2013-01-01<p/>
+
+    <p>内容:</p>
+    <textarea id="message" cols="50" rows="10" name="txt"/></textarea><p/>
+    <button type="button" id="but" onclick="sub(this.form)">送出</button>
+</form>
+</body>
+</html>
