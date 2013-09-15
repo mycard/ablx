@@ -6,7 +6,7 @@
 <script>
     window.onload = function dat() {
         document.getElementById("date").value = new Date().toJSON().slice(0, 10);
-        document.getElementById("l1").value=unescape(document.cookie.substring("lxa=",";"))
+        document.getElementById("l1").value=unescape(document.cookie.substring(4,7))
     };
     function bb(x) {
         var b = "";
