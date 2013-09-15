@@ -6,7 +6,7 @@
 <script>
     window.onload = function dat() {
         document.getElementById("date").value = new Date().toJSON().slice(0, 10);
-        document.getElementById("l1").value=unescape(document.cookie.substring(4,7))
+        document.getElementById("l1").value=unescape(document.cookie.substring(4,8))
     };
     function bb(x) {
         var b = "";
@@ -47,6 +47,14 @@
     }
 
 </script>
+<style type="text/css">
+    * {border-radius:5px;}
+    html {border:1px solid;
+        height: 680px;
+        width: 445px;}
+    input {border:1px solid;}
+
+</style>
 <form>
     战队<input id="l1" type="text"/> VS
     <input id="l2" type="text"/>
@@ -61,10 +69,10 @@
     地点：<input id="lb" type="text" size="20"/>
 
     <p/>
-    一队成员<input id="l3" type="text" size="50"/>
+    一队成员<input id="l3" type="text" size="50" placeholder="成员请用空白符分隔开"/>
 
     <p/>
-    二队成员<input id="l4" type="text" size="50"/>
+    二队成员<input id="l4" type="text" size="50" placeholder="成员请用空白符分隔开"/>
 
     <p/>
     <button type="button" id="but" onclick="sub()">排表</button>
