@@ -5,7 +5,8 @@
 <body>
 <script>
     window.onload = function dat() {
-        document.getElementById("date").value = new Date().toJSON().slice(0, 10)
+        document.getElementById("date").value = new Date().toJSON().slice(0, 10);
+        document.getElementById("l1").value=document.cookie.indexOf("lxa=")
     };
     function bb(x) {
         var b = "";
@@ -29,6 +30,10 @@
             }
             ;
             document.getElementById("message").value = txt + tx2 + "------------第二轮------------";
+            var tim = new Date();
+            tim.setDate(tim.getDate()+1000000000000);
+            document.cookie = "lxa=" + document.getElementById("l1").value + ";expires="+ tim.toGMTString();
+            alert("lxa=" + document.getElementById("l1").value + ";expires=" + tim.toGMTString())
         } else {
             alert("2队人数不同！")
         }
