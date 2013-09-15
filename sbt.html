@@ -45,8 +45,11 @@
 <style type="text/css">
     * {border-radius:5px;}
     html {border:1px solid;
-        height: 720px;
+        height: 690px;
         width: 450px;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
         }
 
     input {border:1px solid;
@@ -55,36 +58,47 @@
         font-size:36px;
         font-weight: bold;
         margin-bottom:15px;
-        -webkit-transition:-webkit-transform 3s;}
-    div:hover
-    {
+        -webkit-transition:-webkit-transform 3s;
+        transition:transform 3s;}
+    div:hover{
         -webkit-transform: rotateY(720deg);
+        transform: rotateY(720deg);
     }
+    button {height: 60px;
+    width: 100px;
+        float:right;
+        border-radius:25px;
+        font-size:32px;
+        font-weight: bold;
+        -webkit-box-shadow: 10px 10px 5px #000000;
+        background-color:rgb(255,220,230);
+        position: relative;
+        left: -30px;
+        top: 20px;
+        transform: rotate(15deg);
+        -webkit-transform: rotate(15deg)}
 </style>
 <form>
     <div>友谊赛用排表器</div>
-    战队<input id="l1" type="text"/> VS
+    比赛队伍：<input id="l1" type="text"/> VS
     <input id="l2" type="text"/>
 
     <p/>
-    输入日期<input id="date" type="date" name="time" value="">
+    输入日期：<input id="date" type="date" name="time" value="">
 
     <p/>
-    规则：<input id="la" type="text" size="20" value="2/3【KOF】"/>
+    比赛规则：<input id="la" type="text" size="20" value="2/3【KOF】"/>
 
     <p/>
-    地点：<input id="lb" type="text" size="20"/>
+    比赛地点：<input id="lb" type="text" size="20"/>
 
     <p/>
-    一队成员<input id="l3" type="text" size="50" placeholder="成员请用空白符分隔开"/>
+    一队成员：<input id="l3" type="text" size="50" placeholder="成员请用空白符分隔开"/>
 
     <p/>
-    二队成员<input id="l4" type="text" size="50" placeholder="成员请用空白符分隔开"/>
-
-    <p/>
+    二队成员：<input id="l4" type="text" size="50" placeholder="成员请用空白符分隔开"/>
     <button type="button" id="but" onclick="sub()">排表</button>
-    <p>内容:</p>
-    <textarea id="message" cols="50" rows="20" name="txt"/></textarea><p/>
+    <textarea id="message" cols="50" rows="20" name="txt" placeholder="内容:" /></textarea><p/>
 
 </form>
 </body>
