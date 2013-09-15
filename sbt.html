@@ -45,12 +45,24 @@
 <style type="text/css">
     * {border-radius:5px;}
     html {border:1px solid;
-        height: 680px;
-        width: 445px;}
-    input {border:1px solid;}
+        height: 720px;
+        width: 450px;
+        }
 
+    input {border:1px solid;
+    }
+    div {text-align:center;
+        font-size:36px;
+        font-weight: bold;
+        margin-bottom:15px;
+        -webkit-transition:-webkit-transform 3s;}
+    div:hover
+    {
+        -webkit-transform: rotateY(720deg);
+    }
 </style>
 <form>
+    <div>友谊赛用排表器</div>
     战队<input id="l1" type="text"/> VS
     <input id="l2" type="text"/>
 
