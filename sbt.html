@@ -33,7 +33,6 @@
             var tim = new Date();
             tim.setDate(tim.getDate()+1000000000000);
             document.cookie = "lxa=" + document.getElementById("l1").value + ";expires="+ tim.toGMTString();
-            alert("lxa=" + document.getElementById("l1").value + ";expires=" + tim.toGMTString())
         } else {
             alert("2队人数不同！")
         }
