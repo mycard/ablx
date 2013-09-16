@@ -3,8 +3,81 @@
 <head>
 </head>
 <body>
-<script src="sbt.js"></script>
-<link rel="stylesheet" type="text/css" href="sbt.css"/>
+<script>
+    window.onload = function dat() {
+        document.getElementById("date").value = new Date().toJSON().slice(0, 10);
+    };
+    function bb(x) {
+        var b = "";
+        for (var i = 13 - x.replace(/[^\x00-\xff]/g, "**").length; i > 0; i--) {
+            b += " "
+        }
+        return b
+    }
+    function sub() {
+        var txt = "",
+                tx2 = "",
+                a1 = document.getElementById("l3").value.split(' ').shuffle(),
+                a2 = document.getElementById("l4").value.split(' ').shuffle();
+        if (a1.length == a2.length) {
+            txt = "比赛： " + document.getElementById("l1").value + "     VS     " + document.getElementById("l2").value + "\n"
+                    + "时间： " + document.getElementById("date").value + "\n"
+                    + "规则： " + document.getElementById("la").value + "\n"
+                    + "地点：" + document.getElementById("lb").value + "\n" + "------------第一轮------------" + "\n";
+            for (var i = a1.length-1; i >= 0; i--) {
+                tx2 += a1[i] + bb(a1[i]) + "0:0" + bb(a2[i]) + a2[i] + "\n"
+            }
+            ;
+            document.getElementById("message").value = txt + tx2 + "------------第二轮------------";
+        } else {
+            alert("2队人数不同！")
+        }
+        ;
+    }
+    if (!Array.prototype.shuffle) {
+        Array.prototype.shuffle = function () {
+            for (var j, x, i = this.length; i; j = parseInt(Math.random() * i), x = this[--i], this[i] = this[j], this[j] = x);
+            return this;
+        };
+    }
+
+</script>
+<style type="text/css">
+    * {border-radius:5px;}
+    html {border:1px solid;
+        height: 690px;
+        width: 450px;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+    input {border:1px solid;
+    }
+    div {text-align:center;
+        font-size:36px;
+        font-weight: bold;
+        margin-bottom:15px;
+        -webkit-transition:-webkit-transform 3s;
+        transition:transform 3s;}
+    div:hover{
+        -webkit-transform: rotateY(720deg);
+        transform: rotateY(720deg);
+    }
+    button {height: 60px;
+    width: 100px;
+        float:right;
+        border-radius:25px;
+        font-size:32px;
+        font-weight: bold;
+        -webkit-box-shadow: 10px 10px 5px #000000;
+        background-color:rgb(255,220,230);
+        position: relative;
+        left: -30px;
+        top: 20px;
+        transform: rotate(15deg);
+        -webkit-transform: rotate(15deg)}
+</style>
 <form>
     <div>友谊赛用排表器</div>
     比赛队伍：<input id="l1" type="text"/> VS
@@ -23,10 +96,9 @@
     一队成员：<input id="l3" type="text" size="50" placeholder="成员请用空白符分隔开"/>
 
     <p/>
-    二队成员：<input id="l4" type="text" size="50" placeholder="成员请用空白符分隔开"/><br>
+    二队成员：<input id="l4" type="text" size="50" placeholder="成员请用空白符分隔开"/>
     <button type="button" id="but" onclick="sub()">排表</button>
-    <br>
-    <textarea id="message" cols="50" rows="20" name="txt" placeholder="内容:"/></textarea><p/>
+    <textarea id="message" cols="50" rows="20" name="txt" placeholder="内容:" /></textarea><p/>
 
 </form>
 </body>
