@@ -1,6 +1,7 @@
 window.onload = function dat() {
     document.getElementById("date").value = new Date().toJSON().slice(0, 10);
     document.getElementById("l1").value = localStorage.alx || "";
+    document.getElementById("la").value = localStorage.ala || "2/3【KOF】";
 };
 function bb(x) {
     var b = "";
