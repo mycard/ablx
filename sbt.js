@@ -26,6 +26,7 @@ function sub() {
         ;
         document.getElementById("message").value = txt + tx2 + "------------第二轮------------";
         localStorage.alx = document.getElementById("l1").value;
+        localStorage.ala = document.getElementById("la").value;
     } else {
         alert("2队人数不同！")
     }
